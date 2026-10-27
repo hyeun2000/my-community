@@ -35,8 +35,14 @@ function App() {
       >
         <Container maxWidth='md' sx={{ py: 4, px: { xs: 2, md: 3 } }}>
           <Routes>
-            <Route path='/' element={ <PostListPage /> } />
-            <Route path='/posts/:postId' element={ <PostDetailPage /> } />
+            <Route
+              path='/'
+              element={ <ProtectedRoute><PostListPage /></ProtectedRoute> }
+            />
+            <Route
+              path='/posts/:postId'
+              element={ <ProtectedRoute><PostDetailPage /></ProtectedRoute> }
+            />
             <Route path='/login' element={ <LoginPage /> } />
             <Route path='/signup' element={ <SignupPage /> } />
             <Route path='/find-id' element={ <FindIdPage /> } />
